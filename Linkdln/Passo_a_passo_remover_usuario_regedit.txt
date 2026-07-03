@@ -1,0 +1,40 @@
+PASSO A PASSO PARA REMOVER UM USUÁRIO DO REGISTRO DO WINDOWS (REGEDIT)
+Data: 16/04/2025
+
+Este procedimento remove o perfil de um usuário do sistema via Editor do Registro. 
+Use com cautela, pois alterações incorretas no Registro podem afetar o funcionamento do Windows.
+
+---
+
+1. ABRIR O REGEDIT
+   - Pressione as teclas Win + R
+   - Digite: regedit
+   - Pressione Enter
+
+2. NAVEGAR ATÉ O CAMINHO:
+   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+
+3. IDENTIFICAR O PERFIL DO USUÁRIO
+   - Expanda a chave "ProfileList"
+   - Você verá várias subchaves como:
+     S-1-5-21-XXXXXXXXX-XXXXXXXXX-XXXXXXXXX-1001
+   - Clique em cada uma e veja o valor de "ProfileImagePath" no painel da direita
+   - Localize aquela que mostra: C:\Users\lgomes
+
+4. EXCLUIR A CHAVE DO USUÁRIO
+   - Clique com o botão direito sobre a chave correspondente
+   - Clique em "Excluir"
+   - Confirme a exclusão
+
+5. (OPCIONAL) LIMPAR PASTAS RESIDUAIS
+   - Vá até C:\Users
+   - Se ainda houver uma pasta com o nome lgomes, apague-a manualmente (se já não tiver feito isso)
+
+6. REINICIAR O COMPUTADOR
+   - Para aplicar totalmente a remoção do perfil e liberar memória
+
+---
+
+ATENÇÃO:
+- Este processo deve ser feito com uma conta administrativa
+- Certifique-se de que o usuário lgomes não esteja logado na máquina ao executar esse procedimento

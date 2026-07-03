@@ -1,0 +1,27 @@
+🚀 Padronizando o Papel de Parede do Windows via GPO 🎨🖥️
+Em um ambiente corporativo, a padronização é essencial para manter a identidade visual da empresa e reforçar a comunicação interna. Uma forma eficiente de garantir isso é utilizando GPO (Group Policy Object) para definir um papel de parede padrão em todas as máquinas da rede.
+Com o Active Directory, conseguimos aplicar essa configuração de maneira centralizada, garantindo que todos os usuários vejam a mesma imagem ao ligar seus computadores e evitando alterações não autorizadas.
+🔹 Passo a passo para configuração:
+1️⃣ Criar a pasta compartilhada:
+ 📂 No servidor, crie uma pasta e copie o arquivo de papel de parede para dentro dela.
+ 🔐 Defina permissões de leitura para o grupo Usuários Autenticados.
+2️⃣ Abrir o Gerenciador de Diretivas de Grupo (GPMC):
+ 🖥️ Acesse Iniciar > Programas > Ferramentas Administrativas > Gerenciamento de Diretivas de Grupo.
+3️⃣ Criar uma nova GPO:
+ 🔹 Clique com o botão direito na Unidade Organizacional (OU) onde deseja aplicar a GPO.
+ 🔹 Escolha Criar uma GPO neste domínio e fornecer um link para ele aqui.
+ 📝 Nomeie a GPO, por exemplo, Papel de Parede Padrão.
+4️⃣ Editar a GPO:
+ 🔧 Expanda a OU, clique com o botão direito na GPO criada e selecione Editar.
+5️⃣ Configurar a política de papel de parede:
+ ➡️ Navegue até Configuração do Usuário > Modelos Administrativos > Área de Trabalho > Área de Trabalho.
+ ➡️ Dê um duplo clique em Papel de parede da área de trabalho.
+ ✅ Marque a opção Habilitado e informe o caminho da imagem no servidor (exemplo: \\servidor\compartilhamento\wallpaper.jpg).
+ 📌 Escolha a opção Centralizar, Preencher, Lado a lado ou outra conforme necessário.
+ 💾 Clique em OK para salvar.
+6️⃣ Aplicar e testar:
+ 🖥️ Execute o comando gpupdate /force no Prompt de Comando para forçar a atualização da política.
+ 🔄 Reinicie um computador da rede para testar se a configuração foi aplicada corretamente.
+Essa prática não apenas padroniza a aparência dos dispositivos, mas também pode ser útil para reforçar campanhas internas, identidade visual ou até alertas institucionais.
+Já aplicou essa configuração na sua empresa? Quais outras diretrizes de GPO você utiliza para otimizar a gestão de TI? Vamos trocar experiências nos comentários! 👇💬
+hashtag#TI hashtag#GPO hashtag#ActiveDirectory hashtag#Windows hashtag#Infraestrutura hashtag#GestãoDeTI hashtag#AdministraçãoDeRedes
